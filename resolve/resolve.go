@@ -218,7 +218,9 @@ func do_map_guard(domains <-chan string,
 
 				// without trailing dot
 				domain := dr.domain[:len(dr.domain)-1]
-				fmt.Printf("%s, %s\n", domain, strings.Join(s, " "))
+				if len(s) > 0 {
+					fmt.Printf("%s, %s\n", domain, strings.Join(s, " "))
+				}
 
 				sumTries += dr.resend
 				domainCount += 1
